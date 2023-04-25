@@ -87,7 +87,12 @@
 		"resources": {
 			"css": [{
 				"uri": "css/style.css"
-			}]
+			}],
+			"js": [
+				{
+					"uri": "libs/quagga.min.js"
+				}
+			]
 		}
 	}
 }

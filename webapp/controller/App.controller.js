@@ -1,6 +1,8 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function(Controller) {
+	"sap/ui/core/mvc/Controller",
+	"sap/ndc/BarcodeScanner",
+	"com/argenovaembarco/helper/barcodescanner"
+], function(Controller, scan, barcodescanner ) {
 	"use strict";
 
 	return Controller.extend("com.argenovaembarco.controller.App", {
@@ -14,6 +16,11 @@ sap.ui.define([
 	        }else {
 	            this.getOwnerComponent().getModel("oFormData").setProperty("/selectShip", false);
 	        }
+	    },
+	    
+	    onScan: function() {
+	 
+			barcodescanner.onScan(this);
 	    }
 
 	});
