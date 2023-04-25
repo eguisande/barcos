@@ -1,0 +1,105 @@
+<mvc:View controllerName="com.argenovaembarco.controller.App" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+		xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="{i18n>titleApp}">
+				<content>
+				    <VBox class="sapUiSmallMargin">
+                		<f:SimpleForm id="SimpleFormChange354"
+                			editable="true"
+                			layout="ResponsiveGridLayout"
+                			labelSpanXL="3"
+                			labelSpanL="3"
+                			labelSpanM="3"
+                			labelSpanS="12"
+                			adjustLabelSpan="false"
+                			emptySpanXL="4"
+                			emptySpanL="4"
+                			emptySpanM="4"
+                			emptySpanS="0"
+                			columnsXL="1"
+                			columnsL="1"
+                			columnsM="1"
+                			singleContainerFullSize="false" >
+                			<f:content>
+                				<Label text="{i18n>ship}" />
+                				<ComboBox
+                				    selectionChange="onSelectShip"
+                    				items="{Ships>/data}">
+                    				<core:Item key="{Ships>id}" text="{Ships>name}" />
+                    			</ComboBox>
+                				<Label text="{i18n>cage}" />
+                				<Input value="{Street}"  enabled="{oFormData>/selectShip}">
+                				    <layoutData>
+                						<l:GridData span="XL1 L2 M2 S6" />
+                					</layoutData>
+                				</Input>
+                				<Button  text="{i18n>pal}" type="Emphasized" enabled="{oFormData>/selectShip}">
+                				    <layoutData>
+                						<l:GridData span="XL1 L2 M2 S6" />
+                					</layoutData>
+                				</Button>
+                				
+                				<Label text="{i18n>product}" class="sapUiLargeMarginTop" />
+                				<Input value="{Street}" class="sapUiLargeMarginBottom" enabled="{oFormData>/selectShip}">
+                				    <layoutData>
+                						<l:GridData span="XL1 L2 M2 S10" />
+                					</layoutData>
+                				</Input>
+                				<Button icon="sap-icon://bar-code" type="Emphasized" enabled="{oFormData>/selectShip}">
+                				    <layoutData>
+                						<l:GridData span="XL1 L2 M2 S2" />
+                					</layoutData>
+                				</Button>
+                				
+                				<Label text="{i18n>mat}" />
+                				<ComboBox
+                    				items="{
+                    					path: '/CountriesCollection',
+                    					sorter: { path: 'text' }
+                    				}">
+                    				<core:Item key="{key}" text="{text}" />
+                    			</ComboBox>
+                				<Label text="{i18n>batch}" />
+                				<Input value="{City}">
+                				</Input>
+                				<Label text="{i18n>qty}" />
+                				<Input value="{City}">
+                				      <layoutData>
+                						<l:GridData span="XL1 L2 M2 S10" />
+                					</layoutData>
+                				</Input>
+                				<Text text="KG">
+                				    <layoutData>
+                						<l:GridData span="XL1 L2 M2 S2" />
+                					</layoutData>
+                				</Text>
+                				<Input value="{City}">
+                				    <layoutData>
+                						<l:GridData span="XL1 L2 M2 S10" />
+                					</layoutData>
+                				</Input>
+                				<Text text="CJ">
+                				    <layoutData>
+                						<l:GridData span="XL1 L2 M2 S2" />
+                					</layoutData>
+                				</Text>
+                			</f:content>
+                		</f:SimpleForm>
+	                </VBox>
+				</content>
+			    <footer>
+        			<OverflowToolbar>
+        			    <Button type="Transparent" icon="sap-icon://list"/>
+        				<ToolbarSpacer/>
+        				<Button type="Emphasized" text="{i18n>add}"/>
+        				<Button type="Accept" text="{i18n>cont}"/>
+        			</OverflowToolbar>
+        		</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
